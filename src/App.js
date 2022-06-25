@@ -2,11 +2,13 @@ import React from 'react';
 
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
-import { expenses } from './expenses';
+import { expenses as initialState } from './expenses';
 
 const App = () => {
+  const [expenses, setExpenses] = React.useState(initialState);
+
   const addExpenseHandler = (expense) => {
-    console.log(`In App.js\n ${JSON.stringify(expense)}`);
+    setExpenses([...expenses, expense]);
   };
 
   return (
