@@ -8,7 +8,7 @@ const App = () => {
   const [expenses, setExpenses] = React.useState(initialState);
 
   const addExpenseHandler = (expense) => {
-    setExpenses([...expenses, expense]);
+    setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
 
   return (
